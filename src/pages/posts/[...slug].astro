@@ -57,23 +57,30 @@ const nextPost = allPosts[currentIndex + 1];
   <div>
     <!-- Previous Post Link -->
   
-    <div>
-      <a href={`/posts/${previousPost.slug}`} class="text-blue-500 hover:text-blue-700">
-        Previous: {previousPost.data.title}
-        <!-- if you want image displayed as well -->
-        <!-- {previousPost.data.image && (
-          <Picture src={previousPost.data.image.url} alt={previousPost.data.image.alt} height="200" width="300"/>)} -->
-      </a>
-      
-      
-    </div>
+    <!-- <div>
+      <a href={`/posts/${previousPost.slug}`} class="text-blue-500 hover:text-blue-700">Previous: {previousPost.data.title}
+       {previousPost.data.image && (
+          <Picture src={previousPost.data.image.url} alt={previousPost.data.image.alt} height="200" width="300"/>)}
+      </a> 
+    </div> -->
+<div>
+    {previousPost && (
+      <a href={`/posts/${previousPost.slug}`} class="text-blue-500 hover:text-blue-700"> ⬅️ Previous {previousPost.data.title}</a>
+   )}
+</div>
     
   <span> |-----spacer-----| </span>
     <!-- Next Post Link -->
   
+    <div>
     {nextPost && (
-       <a href={`/posts/${nextPost.slug}`} class="text-blue-500 hover:text-blue-700">Next: {nextPost.data.title}</a>
+       <a href={`/posts/${nextPost.slug}`} class="text-blue-500 hover:text-blue-700">
+        <p>Next ➡️</p>
+      <p>{nextPost.data.title}</p>
+      </a>
     )}
+    </div>
+
   </div>
 
 </MarkdownPostLayout>

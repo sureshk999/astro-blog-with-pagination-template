@@ -1,8 +1,16 @@
 ---
-import Layout from '../components/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<Layout
+<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+
+		<Header title={SITE_TITLE} />
+<main
 	title="About Me"
 	description="Lorem ipsum dolor sit amet"
 	pubDate={new Date('August 08 2021')}
@@ -59,4 +67,5 @@ import Layout from '../components/BlogPost.astro';
 		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
 		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
 	</p>
-</Layout>
+</main>
+<Footer />
