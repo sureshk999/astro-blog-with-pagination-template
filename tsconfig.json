@@ -1,0 +1,19 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "strictNullChecks": true,
+
+    "moduleResolution": "node",
+    "paths": {
+      "@assets/*": ["/src/assets/*"],
+      "@config": ["/src/config.ts"],
+      "@components/*": ["/src/components/*"],
+      "@content/*": ["/src/content/*"],
+      "@layouts/*": ["/src/layouts/*"],
+      "@pages/*": ["/src/pages/*"],
+      "@styles/*": ["/src/styles/*"],
+      "@utils/*": ["/src/utils/*"]
+    }
+  }
+  
+}

@@ -1,0 +1,80 @@
+---
+// Import necessary utilities
+
+import { getCollection } from 'astro:content';
+import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
+import { Picture } from 'astro:assets';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('posts');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+
+
+// Assuming you have a `posts` collection
+// Fetching posts and sorting them by pubDate in descending order
+const allPosts = (await getCollection('posts'))
+  .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
+
+// Log allPosts to inspect their structure
+// console.log('All Posts:', allPosts);
+
+// Function to find the current post index
+const findCurrentPostIndex = (slug) => {
+  return allPosts.findIndex(post => post.slug === slug);
+};
+
+
+const fullSlug = Astro.url.pathname; // Full path
+// console.log('Full Slug:', fullSlug);
+
+// Extract just the slug part, assuming it's the last part of the pathname
+const currentSlug = fullSlug.split('/').pop();
+// console.log('Current Slug:', currentSlug);
+
+
+// Find current, next, and previous posts
+const currentIndex = findCurrentPostIndex(currentSlug);
+const previousPost = allPosts[currentIndex -1 ];
+const nextPost = allPosts[currentIndex + 1];
+
+// Log the currentIndex to the console
+// console.log('Current Index:', currentIndex);
+// console.log('Previous Post:', previousPost);
+// console.log('Next Post:', nextPost);
+// console.log('Current Index:', currentIndex);
+---
+<MarkdownPostLayout frontmatter={entry.data}>
+  
+  <Content />
+
+  <div>
+    <!-- Previous Post Link -->
+  
+    <div>
+      <a href={`/posts/${previousPost.slug}`} class="text-blue-500 hover:text-blue-700">
+        Previous: {previousPost.data.title}
+        <!-- if you want image displayed as well -->
+        <!-- {previousPost.data.image && (
+          <Picture src={previousPost.data.image.url} alt={previousPost.data.image.alt} height="200" width="300"/>)} -->
+      </a>
+      
+      
+    </div>
+    
+  <span> |-----spacer-----| </span>
+    <!-- Next Post Link -->
+  
+    {nextPost && (
+       <a href={`/posts/${nextPost.slug}`} class="text-blue-500 hover:text-blue-700">Next: {nextPost.data.title}</a>
+    )}
+  </div>
+
+</MarkdownPostLayout>
+
