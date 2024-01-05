@@ -1,0 +1,55 @@
+---
+title: 'Make your first blog post'
+description: 'Make your first blog'
+image:
+  url: "/images/blog.jpg"
+  alt: "make a blog."
+pubDate: 2023-10-31
+tags: ["astro", "learning", "coding", "blog"]
+---
+
+# Building a Simple Blog with Astro.js
+
+In this post, we'll dive deeper into Astro.js and demonstrate how to build a simple blog using this powerful framework.
+
+## Creating Blog Posts
+
+Start by creating a new Astro component for your blog post. Here's an example of what the component might look like:
+
+jsxCopy code
+
+`---
+import { markdown } from '@astro/types';
+
+const markdownFile = await markdown('./blog/my-first-post.md');
+
+export function post() {
+  return (
+    <article>
+      <h1>{markdownFile.meta.title}</h1>
+      <div>{markdownFile.content}</div>
+    </article>
+  );
+}
+---` 
+
+## Routing
+
+With Astro.js, routing is incredibly easy. You can define routes in your project's `astro.config.js` file:
+
+jsCopy code
+
+`export default {
+  // ...
+  routes: [
+    {
+      path: '/blog/*',
+      component: './src/components/BlogPost.astro',
+    },
+    // Other routes...
+  ],
+};` 
+
+Now, you can access your blog posts at URLs like `/blog/my-first-post`.
+
+Stay tuned for more advanced blog customization with Astro.js!

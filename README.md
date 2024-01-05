@@ -1,18 +1,24 @@
-# Astro Starter Kit: Blog
+# Astro Starter Kit: Blog With Pagination and Tags
 
-```sh
-npm create astro@latest -- --template blog
-```
+Welcome to my starter blog template. Modified from the Astro standard blog template to include Tags and Pagination!
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+*pagination* is quite tricky in Astro, and this blog includes it by default. 
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+It has basic styling on purpose, so that you can develop and define your own website. This version includes inline and on page `<style>` elements in case you want to use that. There is another version with `Tailwind CSS` you can [find here](https://github.com/sureshk999/astro-blog-template-tailwind)
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+## Installation
 
-Features:
+Installation couldn't be easier:
+
+`git clone https://github.com/sureshk999/astro-blog-template-tailwind`
+
+followed by 
+
+`npm install`
+
+then deploy or change the code as you like!
+
+## Features
 
 - ✅ Minimal styling (make it your own!)
 - ✅ 100/100 Lighthouse performance
@@ -38,7 +44,7 @@ Inside of your Astro project, you'll see the following folders and files:
 └── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Astro looks for `.astro` or `.md*` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
@@ -61,8 +67,12 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Check out [the official documentation](https://docs.astro.build) or read more about my coding hobby at [my web dev site](https://sureshkhirwadkar.dev).
 
 ## Credit
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+This theme is produced by me, [suresh khirwadkar](https://sureshkhirwadkar.dev).
+
+## Support
+
+If you found this template useful, please consider [buying me a coffee](https://sureshkhirwadkar.dev).

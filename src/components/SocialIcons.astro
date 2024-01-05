@@ -1,0 +1,44 @@
+---
+// Import necessary libraries
+import { Image } from "astro:assets";
+import { setSyntheticTrailingComments } from "typescript";
+
+// Define your social links data
+const socialLinks = [
+  { name: 'Twitter', url: 'https://twitter.com/skhirwadkar', icon: '/images/svg/twitter-colour.svg' },
+  { name: 'Facebook', url: 'https://www.facebook.com/suresh.khirwadkar', icon: '/images/svg/facebook-colour.svg' },
+  { name: 'YouTube', url: 'https://www.youtube.com/@sureshkhirwadkar', icon: '/images/svg/youtube-colour-round.svg' },
+  { name: 'GitHub', url: 'https://github.com/sureshk999', icon: '/images/svg/github-mark.svg' },
+  { name: 'Coffee', url: 'https://buymeacoffee.com/sureshkhirwadkar', icon: '/images/svg/coffee.svg' }
+  
+  
+  // Add more social links as needed
+];
+
+// add back in styling
+
+---
+
+      <div style="display: flex; align-items: center; justify-content: center;">
+      {socialLinks.map((link) => (
+        <a href={link.url} key={link.name} target="_blank" rel="noopener noreferrer">
+          <div style="margin-left: 6px; margin-right: 6px; transition: transform 0.3s ease-in-out;">
+            <Image src={link.icon} alt={link.name} width="25" height="25" />
+          </div>
+        </a>
+      ))}
+      
+    </div>
+
+
+    <style>
+      h2 {
+        margin: 0;
+        font-size: 1em;
+      }
+    
+      h2 a,
+      h2 a.active {
+        text-decoration: none;
+      }
+    </style>

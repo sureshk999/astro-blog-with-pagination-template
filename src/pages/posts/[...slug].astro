@@ -54,7 +54,8 @@ const nextPost = allPosts[currentIndex + 1];
   
   <Content />
 
-  <div>
+  <div style="width: 600px; margin: auto auto; text-align: center;">
+
     <!-- Previous Post Link -->
   
     <!-- <div>
@@ -63,23 +64,24 @@ const nextPost = allPosts[currentIndex + 1];
           <Picture src={previousPost.data.image.url} alt={previousPost.data.image.alt} height="200" width="300"/>)}
       </a> 
     </div> -->
-<div>
+
+
+
     {previousPost && (
-      <a href={`/posts/${previousPost.slug}`} class="text-blue-500 hover:text-blue-700"> ⬅️ Previous {previousPost.data.title}</a>
+      <a style="margin-left: 0; text-align: left" href={`/posts/${previousPost.slug}`} class="text-blue-500 hover:text-blue-700"> ⬅️ Previous: {previousPost.data.title}</a>
    )}
-</div>
+
     
-  <span> |-----spacer-----| </span>
+
     <!-- Next Post Link -->
   
-    <div>
+   
     {nextPost && (
-       <a href={`/posts/${nextPost.slug}`} class="text-blue-500 hover:text-blue-700">
-        <p>Next ➡️</p>
-      <p>{nextPost.data.title}</p>
+       <a  style="margin-right: 0; text-align: right" href={`/posts/${nextPost.slug}`} class="text-blue-500 hover:text-blue-700">
+        Next :{nextPost.data.title} ➡️
       </a>
     )}
-    </div>
+
 
   </div>
 

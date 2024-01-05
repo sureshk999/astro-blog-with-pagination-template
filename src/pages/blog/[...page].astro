@@ -16,24 +16,28 @@ const { prev, next } = page.url;
 <BaseLayout>
   <main>
 
-    <div>
+    <div style="width:500px; margin: auto">
         {page.data.map(({ data, slug }) => (
             <a style="text-decoration: none; color:black;" href={`/posts/${slug}`}>
-            <div style=" background-color: rgb(108, 245, 133); border-radius: 10px; border:solid; padding:10px; margin:10px">
+            <div style=" background-color: rgb(232, 233, 232); border-radius: 10px; border:solid; padding:10px; margin:10px">
             <h3>{data.title}</h3>
             <p>{data.description}</p>
-            <div>
-                <Picture src={data.image.url} alt={data.image.alt} height="200" width="300"/>
-            </div>
+            <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+    <Picture src={data.image.url} alt={data.image.alt} height="200" width="300" style="margin: auto;"/>
+</div>
             </div>
         </a>
         ))}
     </div>
 
-    <div>
+    <div style="text-align: center;">
         <p>Page {page.currentPage} of {page.lastPage}</p>
+
+        <div style="text-align: center;">
         {prev && <a href={prev}>Previous Page</a>}
+        
         {next && <a href={next}>Next Page</a>}
+        </div>
     </div>
     </main>
 </BaseLayout>
