@@ -4,13 +4,13 @@ Welcome to my starter blog template. Modified from the Astro standard blog templ
 
 *pagination* is quite tricky in Astro, and this blog includes it by default. 
 
-It has basic styling on purpose, so that you can develop and define your own website. This version includes inline and on page `<style>` elements in case you want to use that. There is another version with `Tailwind CSS` you can [find here](https://github.com/sureshk999/astro-blog-template-tailwind)
+It has basic styling on purpose, so that you can develop and define your own website. This version includes inline and on page `<style>` elements in case you want to use that. There is another version with `Tailwind CSS` you can [find here](https://github.com/sureshk999/astro-blog-with-pagination-template-tailwind)
 
 ## 👨‍🏫 Installation
 
 Installation couldn't be easier:
 
-`git clone https://github.com/sureshk999/astro-blog-template-tailwind`
+`git clone https://github.com/sureshk999/astro-blog-with-pagination-template.git`
 
 followed by 
 

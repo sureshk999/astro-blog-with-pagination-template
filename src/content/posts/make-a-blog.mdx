@@ -16,9 +16,7 @@ In this post, we'll dive deeper into Astro.js and demonstrate how to build a sim
 
 Start by creating a new Astro component for your blog post. Here's an example of what the component might look like:
 
-jsxCopy code
-
-`---
+```
 import { markdown } from '@astro/types';
 
 const markdownFile = await markdown('./blog/my-first-post.md');
@@ -31,15 +29,14 @@ export function post() {
     </article>
   );
 }
----` 
+```
 
 ## Routing
 
 With Astro.js, routing is incredibly easy. You can define routes in your project's `astro.config.js` file:
 
-jsCopy code
-
-`export default {
+```
+export default {
   // ...
   routes: [
     {
@@ -48,7 +45,8 @@ jsCopy code
     },
     // Other routes...
   ],
-};` 
+};
+```
 
 Now, you can access your blog posts at URLs like `/blog/my-first-post`.
 

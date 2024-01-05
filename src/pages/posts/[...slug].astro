@@ -16,26 +16,27 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 
 
-
 // Assuming you have a `posts` collection
 // Fetching posts and sorting them by pubDate in descending order
 const allPosts = (await getCollection('posts'))
-  .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
 
 // Log allPosts to inspect their structure
 // console.log('All Posts:', allPosts);
 
 // Function to find the current post index
-const findCurrentPostIndex = (slug) => {
-  return allPosts.findIndex(post => post.slug === slug);
+const findCurrentPostIndex = (slug: string) => {
+    return allPosts.findIndex(post => post.slug === slug);
 };
+
 
 
 const fullSlug = Astro.url.pathname; // Full path
 // console.log('Full Slug:', fullSlug);
 
-// Extract just the slug part, assuming it's the last part of the pathname
-const currentSlug = fullSlug.split('/').pop();
+// Split the pathname and pop the last element. Fallback to an empty string if undefined
+const currentSlug = fullSlug.split('/').pop() || '';
 // console.log('Current Slug:', currentSlug);
 
 

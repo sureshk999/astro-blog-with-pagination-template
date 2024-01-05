@@ -21,7 +21,7 @@ const socialLinks = [
 
       <div style="display: flex; align-items: center; justify-content: center;">
       {socialLinks.map((link) => (
-        <a href={link.url} key={link.name} target="_blank" rel="noopener noreferrer">
+        <a href={link.url} target="_blank" rel="noopener noreferrer">
           <div style="margin-left: 6px; margin-right: 6px; transition: transform 0.3s ease-in-out;">
             <Image src={link.icon} alt={link.name} width="25" height="25" />
           </div>
