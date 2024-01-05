@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
+	site: 'https://astro-blog-with-pagination-template.vercel.app',
 	integrations: [mdx(), sitemap()],
 });
