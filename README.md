@@ -76,3 +76,6 @@ This theme is produced by me, [suresh khirwadkar](https://sureshkhirwadkar.dev).
 ## ☕️ Support
 
 If you found this template useful, please consider [buying me a coffee](https://sureshkhirwadkar.dev) to help ongoing development projects.
+
+## Demo Site 
+https://astro-blog-with-pagination-template.vercel.app/
