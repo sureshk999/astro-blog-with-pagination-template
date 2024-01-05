@@ -6,7 +6,7 @@ Welcome to my starter blog template. Modified from the Astro standard blog templ
 
 It has basic styling on purpose, so that you can develop and define your own website. This version includes inline and on page `<style>` elements in case you want to use that. There is another version with `Tailwind CSS` you can [find here](https://github.com/sureshk999/astro-blog-template-tailwind)
 
-## Installation
+## 👨‍🏫 Installation
 
 Installation couldn't be easier:
 
@@ -18,7 +18,7 @@ followed by
 
 then deploy or change the code as you like!
 
-## Features
+## 📣 Features 
 
 - ✅ Minimal styling (make it your own!)
 - ✅ 100/100 Lighthouse performance
@@ -69,10 +69,10 @@ All commands are run from the root of the project, from a terminal:
 
 Check out [the official documentation](https://docs.astro.build) or read more about my coding hobby at [my web dev site](https://sureshkhirwadkar.dev).
 
-## Credit
+## 👋 Credit
 
 This theme is produced by me, [suresh khirwadkar](https://sureshkhirwadkar.dev).
 
-## Support
+## ☕️ Support
 
-If you found this template useful, please consider [buying me a coffee](https://sureshkhirwadkar.dev).
+If you found this template useful, please consider [buying me a coffee](https://sureshkhirwadkar.dev) to help ongoing development projects.
