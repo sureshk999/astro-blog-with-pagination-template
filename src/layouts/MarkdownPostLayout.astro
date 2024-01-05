@@ -1,20 +1,23 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import { Picture } from "astro:assets";
 const { frontmatter } = Astro.props;
 ---
+
 <BaseLayout pageTitle={frontmatter.title}>
-  <main>
+  <main class="p-4">
 
-  <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
-  
-  <p><em>{frontmatter.description}</em></p>
+    <h1 class="">{frontmatter.title}</h1>
 
-  <p>Written by: {frontmatter.author}</p>
+    <p class="text-gray-600">{frontmatter.pubDate.toString().slice(0,10)}</p>
+    
+    <p class="italic">{frontmatter.description}</p>
 
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <p class="font-semibold">Written by: {frontmatter.author}</p>
 
-  <slot />
+    <Picture formats={['avif', 'webp']} src={frontmatter.image} alt={frontmatter.imageAlt} width="600" height="400" class="w-72 mx-auto my-4" />
 
-</main>
+    <slot />
 
+  </main>
 </BaseLayout>

@@ -44,39 +44,37 @@ type PostItem = {
     data: {
         title: string;
         description: string;
-        image: {
-            url: string;
-            alt: string;
-        };
+        image: string;
+        imageAlt: string;
     };
     slug: string;
 };
 ---
 <BaseLayout>
-  <main>
+    <main>
 
-    <div style="width:500px; margin: auto">
-        {page.data.map(({ data, slug }) => (
-            <a style="text-decoration: none; color:black;" href={`/posts/${slug}`}>
-            <div style=" background-color: rgb(232, 233, 232); border-radius: 10px; border:solid; padding:10px; margin:10px">
-            <h3>{data.title}</h3>
-            <p>{data.description}</p>
-            <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
-    <Picture src={data.image.url} alt={data.image.alt} height="200" width="300" style="margin: auto;"/>
-</div>
-            </div>
-        </a>
-        ))}
-    </div>
-
-    <div style="text-align: center;">
-        <p>Page {page.currentPage} of {page.lastPage}</p>
-
-        <div style="text-align: center;">
-        {prev && <a href={prev}>Previous Page</a>}
-        
-        {next && <a href={next}>Next Page</a>}
+        <div class="max-w-md mx-auto">
+            {page.data.map(({ data, slug }) => (
+                <a href={`/posts/${slug}`} class="block text-black no-underline">
+                    <div class="bg-gray-200 rounded-lg border border-gray-300 p-4 my-2">
+                        <h3 class="text-xl font-bold">{data.title}</h3>
+                        <p>{data.description}</p>
+                        <div class="flex justify-center items-center h-full">
+                            <Picture formats={['avif', 'webp']} src={data.image} alt={data.imageAlt} height="200" width="300" class="m-auto"/>
+                        </div>
+                    </div>
+                </a>
+            ))}
         </div>
-    </div>
+    
+        <div class="text-center">
+            <p>Page {page.currentPage} of {page.lastPage}</p>
+    
+            <div class="text-center">
+                {prev && <a href={prev} class="inline-block mr-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Previous Page</a>}
+                {next && <a href={next} class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Next Page</a>}
+            </div>
+        </div>
     </main>
+    
 </BaseLayout>
